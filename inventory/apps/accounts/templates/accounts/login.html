@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Sign in - Inventory Sales{% endblock %}
+{% block page_class %}theme-accounts{% endblock %}
+
+{% block content %}
+    <h1>Sign in</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Sign in</button>
+    </form>
+    <p><a href="{% url "accounts:password_reset" %}">Forgot your password?</a></p>
+{% endblock %}

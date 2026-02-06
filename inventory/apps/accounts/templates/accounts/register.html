@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Register - Inventory Sales{% endblock %}
+{% block page_class %}theme-accounts{% endblock %}
+
+{% block content %}
+    <h1>Create Account</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create account</button>
+    </form>
+    <p>Already have an account? <a href="{% url 'accounts:login' %}">Sign in</a></p>
+{% endblock %}
