@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Supplier Form - Inventory Sales{% endblock %}
+{% block page_class %}theme-suppliers{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">Supplier</div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div class="form-row">{{ form.name.label_tag }}{{ form.name }}</div>
+            <div class="form-row">{{ form.contact_name.label_tage }}{{ form.contact_name }}</div>
+            <div class="form-row">{{ form.email.label_tag }}{{ form.email }}</div>
+            <div class="form-row">{{ form.phone.label_tag }}{{ form.phone }}</div>
+            <div class="form-row">{{ form.address.label_tag }}{{ form.address }}</div>
+            <div class="form-row">{{ form.is_active.label_tag }}{{ form.is_active }}</div>
+            <div class="form-actions">
+                <button class="btn" type="submit">Save</button>
+                <a class="btn-secondary btn" href="{% url "suppliers:list" %}">Cancel</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Supplier Details - Inventory Sales{% endblock %}
+{% block page_class %}theme-suppliers{% endblock %}
+
+{% block context %}
+    <div class="card">
+        <div class="card-header">{{ suppplier.name }}</div>
+        <p>Contact: {{ supplier.contact_name }}</p>
+        <p>Email: {{ supplier.email }}</p>
+        <p>Phone: {{ supplier.phone }}</p>
+        <p>Status: {{ supplier.is_active }}</p>
+        <p>Address: {{ supplier.address }}</p>
+        <div class="form-actions">
+            <a class="btn" href="{% url "suppliers:edit" supplier.ph %}">Edit</a>
+            <a class='btn' href="{% url "suppliers:list" %}">Back</a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Suppliers - Invetory Sales{% endblock %}
+{% block page_class %}theme-suppliers{% endblock %}
+
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">Suppliers</div>
+        <a class="btn" href=" {% url 'suppliers:create' %}">Add Supplier</a>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>Contact</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Status</th>
+                <th>Functions</th>
+            </tr>
+        </thead>
+        <body>
+            {% for supplier in suppliers in  %}
+                <tr>
+                    <td><a href="{% url "supplier:detail" %}">{{ supplier.name }}</a></td>
+                    <td>{{ supplier.contact_name }}</td>
+                    <td>{{ supplier.email }}</td>
+                    <td>{{ supplier.phone }}</td>
+                    <td>{{ supplier.is_active|yesno:"Active, Inactive" }}</td>
+                    <td>
+                        <a class="btn-link" href="{% url 'supplier:edit' supplier.pk %}">Edit</a>
+                        |
+                        <a href="{% url 'supplier:delete' supplier.pk %}">Delete</a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="6">No suppliers yet.</td>
+                </tr>
+            {% endfor %}
+        </body>
+    </table>
+{% endblock %}

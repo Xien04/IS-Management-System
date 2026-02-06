@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Delete Supplier - Inventory Sales{% endblock %}
+{% block page_class %}theme-suppliers{% endblock %}
+
+{% block %}
+    <div class="card">
+        <div class="card-header">Delete Supplier</div>
+        <p>Are you sure want to delete {{ supplier.name }}</p>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-actions">
+                <button class="btn-danger btn" type="submit">Delete</button>
+                <a class="btn-secondary btn" href="{% url "suppliers:list" %}">Cancel</a> 
+            </div>
+        </form>
+    </div>
+{% endblock %}
