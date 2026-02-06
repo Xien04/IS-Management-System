@@ -1,0 +1,16 @@
+<aside class="sidebar">
+    <div class="sidebar-section">
+        <div class="sidebar-title">Inventory</div>
+        <a href="{% url 'dashboard:index' %}">Dashboard</a>
+        <a href="{% url 'suppliers:list' %}">Suppliers</a>
+        <a href="">Products</a>
+        <a href="">Inventory</a>
+        <a href="">Sales</a>
+        <a href="">reports</a>
+    </div>
+    {% if user.is_authenticated %}
+        <div class="sidebar-footer">
+            <a href="{% url "accounts:logout" %}">Sign out</a>
+        </div>
+    {% endif %}
+</aside>
