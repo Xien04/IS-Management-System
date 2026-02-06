@@ -25,6 +25,13 @@ class SupplierCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     success_url = reverse_lazy("suppliers:list")
     success_message = "Supplier created successfully"
 
+class SupplierUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    model = Supplier
+    form_clas = SupplierForm
+    template_name = "suppliers/form.html"
+    success_url = reverse_lazy("suppliers:list")
+    success_message = "Supplier updated successfully"
+
 class SupplierDeleteView(LoginRequiredMixin, DeleteView):
     model = Supplier
     template_name = "suppliers/confirm_delete.html"
