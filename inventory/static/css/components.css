@@ -1,0 +1,326 @@
+.sidebar {
+    position: fixed;
+    top: 64px;
+    width: 200px;
+    height: calc(100% - 64px);
+    background: rgba(9, 13, 30, 0.95);
+    border-right: 1px solid var(--border);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar a {
+    display: block;
+    padding: 8px 0;
+    color: var(--muted);
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    color: var(--primary);
+}
+
+.sidebar-title {
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--accent);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+}
+
+@media (max-width: 900px) {
+    .sidebar {
+        position: static;
+        width: 100;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+}
+
+.card {
+    background: linear-gradient(160deg, var(--surface), var(--surface-2));
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 14px 28px rgba(2, 6, 23, 0.55);
+}
+
+.card-header {
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+
+.table th,
+.table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+}
+
+.table th {
+    background: rgba(95, 211, 255, 0.08);
+    font-weight: 600;
+}
+
+.table tr:last-child td {
+    border-bottom: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: 6px;
+    background: linear-gradient(135deg, #5fd3ff, #7a8cff);
+    color: #081120;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-secondary {
+    background: rgba(154, 167, 209, 0.2);
+    color: var(--text);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #ff6b6b, #ff8a8a);
+}
+
+.btn-link {
+    background: transparent;
+    color: var(--primary);
+    padding: 0;
+}
+
+.form-row {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: rgba(9, 13, 30, 0.7);
+    color: var(--text);
+}
+
+.messages {
+    margin: 16px 32px;
+}
+
+.message {
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    background: rgba(95, 211, 255, 0.12);
+    border: 1px solid rgba(95, 211, 255, 03.);
+}
+
+.message-error {
+    background: rgba(255, 107, 107, 0.18);
+    border-color: rgba(255, 107, 107, 0.45);
+}
+
+.pagination {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.page-link {
+    padding: 6px 10px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+.theme-dashboard main,
+.theme-suppliers main,
+.theme-products main,
+.theme-invetory main,
+.theme-sales main,
+.theme-reports main,
+.theme-accounts main,
+.theme-common main,
+.theme-errors main {
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: rgba(10, 15, 36, 0.75);
+    box-shadow: 0 24px 50px rgba(2, 6, 23, 0.6);
+}
+
+.theme-dashboard main {
+    background: radial-gradient(circle at 20% 10%, rgba(95, 211, 255, 0.25), transparent 55%),
+    radial-gradient(circle at 80% 20%, rgba(122, 140, 255, 0.25), transparent 60%),
+    rgba(10, 15, 36, 0.9);
+}
+
+.theme-suppliers main {
+    background: radial-gradient(circle at 15% 20%, rgba(255, 139, 211, 0.25), transparent 60%),
+    radial-gradient(circle at 75% 30%, rgba(95, 211, 255, 0.18), transparent 60%),
+    rgba(11, 12, 34, 0.9)
+}
+
+.theme-products main {
+    background: radial-gradient(circle at 20% 20%, rgba(122, 140, 255, 0.28), transparent 60%),
+    radial-gradient(circle at 80% 40%, rgba(95, 211, 255, 0.18), transparent 60%),
+    rgba(8, 14, 32, 0.9);
+}
+
+.theme-inventory main {
+    background: radial-gradient(circle at 25% 15%, rgba(95, 211, 255, 0.22), transparent 60%),
+    radial-gradient(circle at 70% 60%, rgba(255, 139, 211, 0.16), transparent 60%),
+    rgba(10, 13, 30, 0.9);
+}
+
+.theme-sales main {
+    background: radial-gradient(circle at 20% 15%, rgba(255, 220, 120, 0.22), transparent 60%),
+    radial-gradient(circle at 75% 40%, rgba(255, 139, 211, 0.18), transparent 60%),
+    rgba(12, 10, 28, 0.9);
+}
+
+.theme-reports main {
+    background: radial-gradient(circle at 15% 25%, rgba(122, 140, 255, 0.25), transparent 60%),
+    radial-gradient(circle at 80% 20%, rgba(95, 211, 255, 0.2), transparent 60%),
+    rgba(9, 12, 29, 0.9);
+}
+
+.theme-accounts main {
+    background: radial-gradient(circle at 250 20%, rgba(95, 211, 255, 0.2), transparent 60%),
+    radial-gradient(circle at 80% 30%, rgba(255, 139, 211, 0.22), transparent 60%),
+    rgba(8, 13, 28, 0.9);
+}
+
+.theme-common main {
+    background: radial-gradient(circle at 25% 25%, rgba(120, 140, 255, 0.2), transparent 60%),
+    radial-gradient(circle at 70% 40%, rgba(95, 211, 255, 0.2), transparent 60%),
+    rgba(9, 12, 28, 0.9);
+}
+
+.theme-error main {
+    background: radial-gradient(circle at 30% 30%, rgba(255, 107, 107, 0.22), transparent 60%),
+    radial-gradient(circle at 70% 40%, rgba(122, 140, 255, 0.2), transparent 60%),
+    rgba(10, 11, 26, 0.9);
+}
+
+.theme-dashboard main::before,
+.theme-suppliers main::before,
+.theme-products main::before,
+.theme-inventory main::before,
+.theme-sales main::before,
+.theme-reports main::before,
+.theme-accounts main::before,
+.theme-common main::before,
+.theme-errors main::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(#ffffff 1px, transparent 1px),
+        radian-gradient(#7dd3fc 1px, transparent 1px);
+    background-size: 140px 140px, 220px 220px;
+    background-position: 0 0, 50px 80px;
+    opacity: 0.12;
+    pointer-events: none;
+}
+
+.theme-dashboard main > *,
+.theme-suppliers main > *,
+.theme-products main > *,
+.theme-inventory main > *,
+.theme-sales main > *,
+.theme-reports main > *,
+.theme-accounts main > *, 
+.theme-common main > *,
+.theme-error main > * {
+    position: relative;
+    z-index: 1;
+}
+
+.space-hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid rgba(95, 211, 255, 0.25);
+    background: 
+        radial-gradient(circle at 30% 20%, rgba(95, 211, 255, 0.18), transparent 60%),
+        radial-gradient(circle at 80% 30%, rgba(255, 139, 211, 0.2), transparent 55%),
+        linear-gradient(160deg, #0a0f24, #101b3d);
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.space-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: 
+        radial-gradient(#ffffff 1px, transparent 1px),
+        radial-gradient(#7dd3fc 1px, transparent 1px);
+    background-size: 120px 120px, 200px 200px;
+    background-position: 0 0, 40px 60px;
+    opacity: 0.18;
+    pointer-events: none;
+}
+
+.space-hero-context {
+    position: relative;
+    z-index: 1;
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 140px;
+    margin-top: 16px;
+}
+
+.stat-card {
+    background: rgba(11, 17, 36, 0.7);
+    border: 1px solid rgba(95, 211, 255, 0.2);
+    border-radius: 12px;
+    padding: 12px 14px;
+}
+
+.stat-label {
+    color: var(--muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 6px;
+}
