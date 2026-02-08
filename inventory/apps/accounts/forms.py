@@ -18,4 +18,4 @@ class RegisterForm(UserCreationForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        field = ("phone", "role")
+        fields = ("phone", "role")
