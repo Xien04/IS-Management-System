@@ -22,7 +22,7 @@
             </tr>
         </thead>
         <body>
-            {% for supplier in suppliers in  %}
+            {% for supplier in suppliers %}
                 <tr>
                     <td><a href="{% url "supplier:detail" %}">{{ supplier.name }}</a></td>
                     <td>{{ supplier.contact_name }}</td>
