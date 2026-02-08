@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
 
 from .forms import ProfileForm, RegisterForm
+from .models import Profile
 
 
 def register(request):
@@ -25,9 +26,9 @@ def register(request):
 
 @login_required
 def profile(request):
-    profile_obj = request.user.profile
+    profile_obj, _ = Profile.objects.get_or_create(user=request.user)
 
-    if request == "POST":
+    if request.method == "POST":
         form = ProfileForm(request.POST, instance=profile_obj)
         if form.is_valid():
             messages.success(request, "Profile Update")
