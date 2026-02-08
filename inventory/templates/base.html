@@ -12,8 +12,10 @@
 <body class"{% block page_class %}{% endblock  %}">
     {% include 'partials/navbar.html' %}
     {% include 'partials/sidebar.html' %}
+    {% include 'partials/messages.html' %}
     <main>
         {% block content %}{% endblock %}
     </main>
+    {% include 'partials/pagination.html' %}
 </body>
 </html>
