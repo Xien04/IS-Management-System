@@ -6,7 +6,7 @@ from django.views.generic import CreateView, DeleteView, DetailView, ListView, U
 from .forms import ProductForm
 from .models import Product
 
-class ProductView(LoginRequiredMixin, ListView):
+class ProductListView(LoginRequiredMixin, ListView):
     model = Product
     template_name = "product/list.html"
     context_object_name = "products"
