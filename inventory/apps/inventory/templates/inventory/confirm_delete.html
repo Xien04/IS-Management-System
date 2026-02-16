@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Delete Inventory Item - Inventory Sales{% endblock %}
+{% block page_class %}theme-inventory{% endblock %}
+
+{% block content %}
+  <div class="card">
+    <div class="card-header">Delete Inventory Item</div>
+    <p>Are you sure you want to delete {{ item.product.name }} from inventory?</p>
+    <form method="post">
+      {% csrf_token %}
+      <div class="form-actions">
+        <button class="btn-danger btn" type="submit">Delete</button>
+        <a class="btn-secondary btn" href="{% url 'inventory:list' %}">Cancel</a>
+      </div>
+    </form>
+  </div>
+{% endblock %}

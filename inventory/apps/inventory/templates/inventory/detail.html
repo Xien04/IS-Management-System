@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Inventory Details - Inventory Sales{% endblock %}
+{% block page_class %}theme-inventory{% endblock %}
+
+{% block content %}
+  <div class="card">
+    <div class="card-header">{{ item.product.name }}</div>
+    <p>On Hand: {{ item.quantity_on_hand }}</p>
+    <p>Reorder Level: {{ item.reorder_level }}</p>
+    <p>Location: {{ item.location }}</p>
+    <p>Last Updated: {{ item.updated_at }}</p>
+    <div class="form-actions">
+      <a class="btn" href="{% url 'inventory:edit' item.pk %}">Edit</a>
+      <a class="btn-secondary btn" href="{% url 'inventory:list' %}">Back</a>
+    </div>
+  </div>
+{% endblock %}

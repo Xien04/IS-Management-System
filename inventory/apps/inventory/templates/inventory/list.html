@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Inventory - Inventory Sales{% endblock %}
+{% block page_class %}theme-inventory{% endblock %}
+
+{% block content %}
+  <div class="card">
+    <div class="card-header">Inventory</div>
+    <a class="btn" href="{% url 'inventory:create' %}">Add Inventory Item</a>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>On Hand</th>
+        <th>Reorder Level</th>
+        <th>Location</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in items %}
+        <tr>
+          <td><a href="{% url 'inventory:detail' item.pk %}">{{ item.product.name }}</a></td>
+          <td class="{% if item.low_stock %}low-stock{% endif %}">{{ item.quantity_on_hand }}</td>
+          <td>{{ item.reorder_level }}</td>
+          <td>{{ item.location }}</td>
+          <td>
+            <a class="btn-link" href="{% url 'inventory:edit' item.pk %}">Edit</a>
+            |
+            <a class="btn-link" href="{% url 'inventory:delete' item.pk %}">Delete</a>
+          </td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="5">No inventory items yet.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

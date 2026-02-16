@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Inventory Form - Inventory Sales{% endblock %}
+{% block page_class %}theme-inventory{% endblock %}
+
+{% block content %}
+  <div class="card">
+    <div class="card-header">Inventory Item</div>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      <div class="form-row">{{ form.product.label_tag }} {{ form.product }}</div>
+      <div class="form-row">{{ form.quantity_on_hand.label_tag }} {{ form.quantity_on_hand }}</div>
+      <div class="form-row">{{ form.reorder_level.label_tag }} {{ form.reorder_level }}</div>
+      <div class="form-row">{{ form.location.label_tag }} {{ form.location }}</div>
+      <div class="form-actions">
+        <button class="btn" type="submit">Save</button>
+        <a class="btn-secondary btn" href="{% url 'inventory:list' %}">Cancel</a>
+      </div>
+    </form>
+  </div>
+{% endblock %}
