@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Product Form - Inventory Sales{% endblock %}
+{% block page_class %}theme-products{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">Product</div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div class="form-row">{{ form.supplier.label_tag }} {{ form.supplier }}</div>
+            <div class="form-row">{{ form.name.label_tag }} {{ form.name }}</div>
+            <div class="form-row">{{ form.sku.label_tag }} {{ form.sku }}</div>
+            <div class="form-row">{{ form.category.label_tag }} {{ form.category }}</div>
+            <div class="form-row">{{ form.unit_price.label_tag }} {{ form.unit_price }}</div>
+            <div class="form-row">{{ form.cost_price.label_tag }} {{ form.cost_price }}</div>
+            <div class="form-row">{{ form.description.label_tag }} {{ form.description }}</div>
+            <div class="form-row">{{ form.is_active.label_tag }} {{ form.is_active }}</div>
+            <div class="form-actions">
+                <button class="btn" type="submit">Save</button>
+                <a class="btn-secondary btn" href="{% url 'products:list' %}">Cancel</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

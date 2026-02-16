@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Products - Inventory System{% endblock %}
+{% block page_class %}theme-product{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">Products</div>
+        <a class="btn" href="{% url 'products:create' %}">Add Product</a>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>SKU</th>
+                <th>Category</th>
+                <th>Supplier</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+                <tr>
+                    <td><a href="{% url 'products:detail' product.pk %}">{{ product.name }}</a></td>
+                    <td>{{ product.sku }}</td>
+                    <td>{{ product.category }}</td>
+                    <td>{{ product.supplier }}</td>
+                    <td>{{ product.unit_price }}</td>
+                    <td>
+                        <a class="btn" href="{% url 'products:edit' product.pk %}">Edit</a>
+                        |
+                        <a class="btn" href="{% url 'products:delete' product.pk %}">Delete</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="6" >No products yet.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

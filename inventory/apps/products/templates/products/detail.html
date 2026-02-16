@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Product Details - Inventory Sales{% endblock %}
+{% block page_class %}theme-products{% endblock %}
+
+{% block context %}
+    <div class="card">
+        <div class="card-header">{{ Product.name }}</div>
+        <p>SKU: {{ product.sku }}</p>
+        <p>Category: {{ product.category }}</p>
+        <p>Supplier: {{ product.supplier }}</p>
+        <p>Unit Price: {{ product.unit_price }}</p>
+        <p>Cost Price: {{ product.cost_price }}</p>
+        <p>Status: {{ product.is_active|yesno: "Active","Inactive" }}</p>
+        <p>Description: {{ product.Description }}</p>
+        <div class="form-actions">
+            <a class="btn" href="{% url 'products:edit' product.pk %}">Edit</a>
+            <a class="btn-secondary btn" href="{% url 'products:list' %}">Back</a>
+        </div>
+    </div>
+{% endblock %}
